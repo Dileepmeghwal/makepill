@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: makepill;
+}
+
+@font-face {
+    font-family: makepill;
+    src: url(../font/NeueHaasDisplay-Roman.woff2);
+}
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    position:  relative !important;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    z-index: 111;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 33px 60px;
+}
+
+nav .logo {
+    font-size: 1.4vw;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+nav #one {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 5px 3px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    min-width: 40px;
+    height: 32px;
+    cursor: pointer;
+    color: #fff;
+}
+
+nav #two {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 5px 3px;
+    min-width: 40px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    height: 32px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+nav #two:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-aling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page1 {
+    width: 100vw;
+    height: 100vh;
+}
+
+.page1 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page1_text {
+    position: absolute;
+    color: #fff;
+
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+}
+
+.page1_text h1 {
+    font-size: 6.5vw;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.page1_text h3 {
+    font-size: 1.6vw;
+    font-weight: 300;
+}
+
+.page1_text .decorator {
+    color: #deff00;
+}
+
+.page2 {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* page2 */
+.page2 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.page2 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* //page3 */
+.page3 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: space-between;
+    align-items: bottom;
+    vertical-align: center;
+    position: absolute;
+    width: 70%;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.box-l video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-r h4 {
+    font-size: 1.2vw;
+    font-weight: 200;
+    margin-bottom: 5rem;
+}
+
+.box-r h2 {
+    font-size: 2.5vw;
+    font-weight: 500;
+}
+
+.grid-box .round-cirlce {
+    width: 140px;
+    height: 140px;
+    border: 1px solid #999;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.follower {
+    width: 10px;
+    height: 10px;
+    z-index: -1;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.link {
+    /* color: white; */
+    cursor: pointer;
+    /* font-size: 30px; */
+}
+
+.page4 {
+    width: 100vw;
+    height: 55vh;
+    overflow: hidden;
+
+}
+
+.page4 .slider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    animation: marquee 8s linear infinite;
+    padding: 20px 0;
+}
+
+.page4 .slider h1 {
+    font-size: 5.6vw;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.page4 .slider video {
+    object-fit: contain;
+    padding: 0 30px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.page5 {
+    width: 100vw;
+    position: relative;
+    height: 100vh;
+    background-color: red;
+    overflow: hidden;
+}
+
+.page5 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b2;
+    background-blend-mode: darken;
+}
+
+.design-list {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80% !important;
+    color: #fff;
+
+
+}
+
+.design-list ul li {
+    list-style: none;
+    margin-top: 100px;
+}
+
+.design-list ul li .lft h1 {
+    font-size: 3.8vw;
+    font-weight: 800;
+    cursor: pointer;
+
+}
+
+.design-list ul li:hover .rtl button {
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.play-video {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.my-element {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: #000;
+    color: #fff;
+}
+
+.rtl button {
+    padding: 17px 20px;
+    background-color: transparent;
+    color: #fff;
+    font-family: makepill;
+    font-size: 1vw;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    opacity: 0;
+
+}
+
+
+.design-list ul li .rtl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+
+.page6 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.our_culture_grid {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80% !important;
+}
+
+
+.bx-left h4 {
+    font-size: 1.2vw;
+    font-weight: 200;
+    margin-bottom: 5rem;
+}
+
+.bx-left h2 {
+    font-size: 2.5vw;
+    font-weight: 500;
+}
+
+.page7 {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0f0f0f;
+    position: relative;
+
+}
+
+.page7 video {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.text-layout {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+}
+
+.text-layout h1 {
+    font-size: 6vw;
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+.text-layout h4 {
+    color: #fff;
+    font-size: 1.8vw;
+    font-weight: 300;
+}
+
+.flex-wrap {
+    display: flex;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 50px 40px;
+}
+
+.flex-wrap h4 {
+    font-size: 1.4vw;
+    font-weight: 100;
+    color: #cccccc;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
