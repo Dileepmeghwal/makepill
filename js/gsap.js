@@ -42,6 +42,20 @@ loco();
 // function textAnim() {
 let tl = gsap.timeline();
 
+gsap.to("#loader", {
+  duration: 5,
+  display: "none",
+});
+tl.from("#loader .loader-intro h3 span", {
+  x: -40,
+  y: -50,
+  opacity: 0,
+  ease: "power4.out",
+
+  stagger: 0.2,
+  pause: true,
+});
+
 tl.from("nav> div", {
   y: 50,
   opacity: 0,
@@ -67,6 +81,7 @@ tl.from(".page1_text .min-text span", 1.2, {
     amount: 0.3,
   },
 });
+
 gsap.to("header nav div", {
   color: "#000",
   scrollTrigger: {
@@ -106,7 +121,6 @@ gsap.to(".page3, .page4", {
 const header = document.querySelector("header nav div");
 const headerButton = document.querySelector("header > nav button");
 const slider = document.getElementsByClassName(".slider");
-
 
 gsap.to(".page4 > .slider h1", {
   backgroundColor: "#000",
@@ -182,4 +196,92 @@ let airbusgamingVideo = document.querySelector("#airbusgaming");
 const cursor = new MouseFollower({
   container: document.body,
   speed: 0.3,
+});
+
+let one = document.querySelector("#one");
+let two = document.querySelector("#two");
+let button = document.querySelector(".btn-aling");
+let div = document.querySelector("#fullscreenMenu");
+var isToggle = false;
+button.addEventListener("click", function () {
+  // Create a GSAP timeline
+  var tl = gsap.timeline();
+
+  // Toggle the value of isToggle
+  isToggle = !isToggle;
+
+  // Add animations to the timeline based on the toggle state
+  if (isToggle) {
+    tl.to("#one", { x: -4, rotate: -12 });
+    tl.to("#two", { x: 4, rotate: 12 }, 0);
+    tl.to("#fullscreenMenu", { top: "0", opacity: 1 });
+    tl.from(`#fullscreenMenu .right-side ul li`, {
+      x: -50,
+      opacity: 0,
+      stagger: 0.3,
+    });
+  } else {
+    // Reverse the animations
+    tl.to("#fullscreenMenu .right-side ul li", {
+      x: -50,
+      opacity: 0,
+      stagger: 0.3,
+    });
+    gsap.to("#fullscreenMenu", {
+      top: "-100%",
+      opacity: 1,
+    });
+    tl.to("#one", { x: 0, rotate: 0 }, "-=1"); // Reverse animation should start 1 second earlier
+    tl.to("#two", { x: 0, rotate: 0 }, "-=1");
+  }
+
+  gsap.to(button, { rotation: isToggle ? 0 : 0 }); // Rotate the button based on the toggle state
+});
+
+const cursorr = new MouseFollower({
+  visible: false,
+});
+const elr = document.querySelector("#fullscreenMenu ul");
+const elr2 = document.querySelector("#fullscreenMenu .right-side ul");
+
+elr.addEventListener("mouseenter", () => {
+  cursorr.show();
+  cursorr.setText("Open!");
+});
+
+elr.addEventListener("mouseleave", () => {
+  cursorr.removeText();
+  cursorr.hide();
+});
+
+elr2.addEventListener("mouseenter", () => {
+  cursorr.show();
+  cursorr.setText("Open!");
+});
+
+elr2.addEventListener("mouseleave", () => {
+  cursorr.removeText();
+  cursorr.hide();
+});
+
+const videoBox = document.getElementById("mainVideo");
+const listItems = document.querySelectorAll(".cubreto");
+
+const defaultVideoSrc = listItems[0].getAttribute("data-video-src");
+videoBox.src = defaultVideoSrc;
+videoBox.load();
+
+listItems.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    const videoSrc = item.getAttribute("data-video-src");
+    gsap.to(videoBox, {
+      opacity: 0,
+      duration: 0.3,
+      onComplete: () => {
+        videoBox.src = videoSrc;
+        videoBox.load();
+        gsap.to(videoBox, { opacity: 1, duration: 0.3 });
+      },
+    });
+  });
 });
